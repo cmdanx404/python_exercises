@@ -1,0 +1,27 @@
+class MyRange:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+        self.current = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.end:
+            num = self.current
+            self.current += 1
+            return num
+        else:
+            raise StopIteration
+
+    def reset(self):
+        self.current = self.start
+
+# Use the custom iterator
+my_iter = MyRange(2, 6)
+
+for number in my_iter:
+    print(number)
+
+print("Iteration complete.")
