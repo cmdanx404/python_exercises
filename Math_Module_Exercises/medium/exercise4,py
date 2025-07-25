@@ -1,0 +1,5 @@
+import math
+
+degrees = float(input("Enter angle in degrees: "))
+radians = math.radians(degrees)
+print("Sine of", degrees, "degrees is:", round(math.sin(radians), 3))
